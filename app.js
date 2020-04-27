@@ -1,4 +1,4 @@
-console.log('hello')
+console.log('hello');
 //**********Global Variables********
 var symbol = 'O';
 var count = 0;
@@ -60,12 +60,12 @@ function draw(){
     this.textContent = symbol;
     // *****this part will return the matrix representation of the game which is the var result
     var col = this.id[1];
-    var row = this.id[0]
+    var row = this.id[0];
     updateResult(col, row, symbol);
    //********
     count++;
     this.removeEventListener("click", draw, false);
-    if(count >= 6){
+    if(count >= 5){
         if(check(col, row, symbol)){
             if(symbol === 'X'){
                 console.log('Player 1 wins')
@@ -81,14 +81,15 @@ function draw(){
 }
 
 //********Events*********
-var tds = document.getElementsByTagName('td')
+var tds = document.getElementsByTagName('td');
 for(let i = 0 ; i < tds.length; i++){
     tds[i].addEventListener('click', draw)
 }
 
 document.getElementsByTagName('button')[0].addEventListener('click', function(){
     for(let i = 0 ; i < tds.length; i++){
-        tds[i].textContent = ''
+        tds[i].textContent = '';
+        tds[i].addEventListener("click", draw)
     }
     count = 0;
     result = [[],[],[]]
