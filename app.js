@@ -3,6 +3,7 @@ var symbol = 'O';
 function draw(){
     symbol = (symbol === 'X')? 'O' : 'X'
     this.textContent = symbol;
+    this.removeEventListener("click", draw, false)
 }
 
 
