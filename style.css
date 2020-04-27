@@ -1,0 +1,25 @@
+h1{
+    color: lightsalmon;
+    display: table;
+    margin: 0 auto;
+}
+td {
+    height: 2cm;
+    border: solid;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+table{
+    display: table;
+    margin: 5% auto 2em;
+    border: solid;
+    width: 30%;
+    border-collapse: collapse;
+}
+button{
+    height: 2em;
+    background-color: bisque;
+    color: coral;
+    display: table;
+    margin: 0 auto;
+}
