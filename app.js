@@ -35,6 +35,7 @@ function verifyMajorDiago(text) {
     }
     return true
 }
+
 function verifyMinorDiago(text) {
     for(let i = 2; i >= 0; i--){
         for(let j = 0; j < 3; j++){
@@ -57,25 +58,21 @@ function check(col, row, text){
 //******   MAIN App **********
 function draw(){
     symbol = (symbol === 'X')? 'O' : 'X';
-    this.textContent = symbol;
-    // *****this part will return the matrix representation of the game which is the var result
     var col = this.id[1];
     var row = this.id[0];
-    updateResult(col, row, symbol);
-   //********
-    count++;
-    this.removeEventListener("click", draw, false);
-    if(count >= 5){
-        if(check(col, row, symbol)){
-            if(symbol === 'X'){
-                console.log('Player 1 wins')
+    if(!result[row][col]){
+        this.textContent = symbol;
+        updateResult(col, row, symbol);
+        count++;
+        if(count >= 5){
+            if(check(col, row, symbol)){
+                if(symbol === 'X'){
+                    document.getElementById('win').textContent = 'Player 1 wins'
+                }
+                else{
+                    document.getElementById('win').textContent = 'Player 2 wins'
+                }
             }
-            else{
-                console.log('Player 2 wins')
-            }
-        }
-        else{
-            console.log('still')
         }
     }
 }
@@ -93,4 +90,6 @@ document.getElementsByTagName('button')[0].addEventListener('click', function(){
     }
     count = 0;
     result = [[],[],[]]
+    document.getElementById('win').textContent = ''
+    symbol = 'O'
 });

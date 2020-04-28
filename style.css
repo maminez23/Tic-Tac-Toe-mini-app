@@ -4,17 +4,21 @@ h1{
     margin: 0 auto;
 }
 td {
-    height: 2cm;
+    height: 4em;
+    width: 4em;
     border: solid;
-    border-collapse: collapse;
-    white-space: nowrap;
+}
+form{
+    display: table;
+    margin: auto;
 }
 table{
     display: table;
-    margin: 5% auto 2em;
+    margin: 5% auto;
     border: solid;
-    width: 30%;
     border-collapse: collapse;
+    position: center;
+
 }
 button{
     height: 2em;
